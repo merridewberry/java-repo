@@ -15,12 +15,12 @@ public class Lesson6 {
         double swimmingCheck = 10.2;
 
         runningCheck(runningCheck, catsArray);
-        jumpingCheck(jumpingCheck, catsArray);
-        swimmingCheck(swimmingCheck, catsArray);
+        jumpingCheck(jumpingCheck, catsArray, 2);
+        swimmingCheck(swimmingCheck, catsArray, 1);
 
-        runningCheck(runningCheck, dogsArray);
+        runningCheck(runningCheck, dogsArray, 5);
         jumpingCheck(jumpingCheck, dogsArray);
-        swimmingCheck(swimmingCheck, dogsArray);
+        swimmingCheck(swimmingCheck, dogsArray, 3);
 
     }
 
@@ -78,6 +78,11 @@ public class Lesson6 {
         System.out.println();
     }
 
+    private static void runningCheck(int distance, Animal[] array, int number) {
+        array[number - 1].run(distance);
+        System.out.println();
+    }
+
     private static void jumpingCheck(double distance, Animal[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i].jump(distance);
@@ -85,10 +90,20 @@ public class Lesson6 {
         System.out.println();
     }
 
+    private static void jumpingCheck(double distance, Animal[] array, int number) {
+        array[number - 1].jump(distance);
+        System.out.println();
+    }
+
     private static void swimmingCheck(double distance, Animal[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i].swim(distance);
         }
+        System.out.println();
+    }
+
+    private static void swimmingCheck(double distance, Animal[] array, int number) {
+        array[number - 1].swim(distance);
         System.out.println();
     }
 
